@@ -3,22 +3,39 @@
 	<head>
 		<meta charset="UTF-8" />
 		<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'"> -->
 		<title>Hello World!</title>
 	</head>
 	<style>
+		html {
+			height: 100%;
+		}
 		body {
 			margin: 0;
+			padding: 3px;
+			height: 100%;
+			box-sizing: border-box;
+		}
+		#dragger {
 			background: rgba(255, 255, 255, 0.1);
-			border: 2px solid yellow;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
+			border-top: 1px solid white;
+			border-bottom: 1px solid white;
 			-webkit-app-region: drag;
+			color: white;
+			font-family: sans-serif;
+			height: 100%;
+		}
+		#middle-line {
+			height: 1px;
+			background: white;
+			position: relative;
+			top: 50%;
+			margin-top: -1px;
 		}
 	</style>
-	<body>
+	<body id='body'>
+		<div id="middle-line"></div>
+		<div id="dragger"></div>
 		<script src="ruler.js"></script>
 		<script src="./renderer.js"></script>
 	</body>

@@ -1,3 +1,5 @@
+
+
 function handleMouseMove(e) {
 	const { clientY } = e
 	console.log(e)
@@ -6,5 +8,3 @@ function handleMouseMove(e) {
 	// 	window.moveBy(0, -1)
 	// }
 }
-
-document.addEventListener('mousemove', handleMouseMove)

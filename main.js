@@ -2,6 +2,7 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
+
 try {
 	require('electron-reloader')(module)
 } catch (_) {}
@@ -9,12 +10,13 @@ try {
 function createWindow() {
 	// Create the browser window.
 	const mainWindow = new BrowserWindow({
-		width: 800,
-		height: 600,
+		width: 200,
+		height: 200,
 		transparent: true,
 		frame: false,
-		backgroundColor: '#33FFFFFF',
+		backgroundColor: '#00FFFFFF',
 		hasShadow: false,
+		resizable: true,
 		alwaysOnTop: true,
 		webPreferences: {
 			preload: path.join(__dirname, 'preload.js'),
@@ -23,6 +25,11 @@ function createWindow() {
 
 	// and load the index.html of the app.
 	mainWindow.loadFile('index.html')
+	
+	setInterval(function(){
+        mainWindow.setAlwaysOnTop(true);
+    }, 1);
+
 
 	// Open the DevTools.
 	// mainWindow.webContents.openDevTools()
